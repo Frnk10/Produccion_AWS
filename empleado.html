@@ -129,7 +129,7 @@
             const direccion = document.getElementById('direccion').value;
 
             try {
-                const response = await fetch('http://18.117.224.229:3000/api/empleado', {
+                const response = await fetch('http://18.218.130.165:3000/api/empleado', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -162,7 +162,7 @@
         /*MOSTRAR DATOS EN TABLA USANDO FETCH*/
         var table = new DataTable('#tableEmpleado');
         async function fetchEmpleados(){
-            const response = await fetch('http://18.117.224.229:3000/api/empleado');
+            const response = await fetch('http://18.218.130.165:3000/api/empleado');
             const empleados = await response.json();
             const tbody = document.getElementById('tableEmpleado').querySelector('tbody');
             tbody.innerHTML = '';

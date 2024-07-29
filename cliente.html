@@ -128,7 +128,7 @@
             const email = document.getElementById('email').value;
             const edad = parseInt(document.getElementById('edad').value, 10);
             try {
-                const response = await fetch('http://18.117.224.229:3000/api/cliente', {
+                const response = await fetch('http://18.218.130.165:3000/api/cliente', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -161,7 +161,7 @@
         /*MOSTRAR DATOS EN TABLA USANDO FETCH*/
         var table = new DataTable('#tableCliente');
         async function fetchClientes(){
-            const response = await fetch('http://18.117.224.229:3000/api/cliente');
+            const response = await fetch('http://18.218.130.165:3000/api/cliente');
             const clientes = await response.json();
             const tbody = document.getElementById('tableCliente').querySelector('tbody');
             tbody.innerHTML = '';

@@ -142,7 +142,7 @@
         });
 
         function fetchClientes() {
-            fetch('http://18.117.224.229:3000/api/cliente')
+            fetch('http://18.218.130.165:3000/api/cliente')
                 .then(response => response.json())
                 .then(data => {
                     const clienteSelect = document.getElementById('idCliente');
@@ -157,7 +157,7 @@
         }
 
         function fetchProductos() {
-            fetch('http://18.117.224.229:3000/api/producto')
+            fetch('http://18.218.130.165:3000/api/producto')
             .then(response => response.json())
             .then(data => {
                 const productoSelect = document.getElementById('idProducto');
@@ -204,7 +204,7 @@
             const total_vent = parseFloat(document.getElementById('total').value);
 
             try {
-                const response = await fetch('http://18.117.224.229:3000/api/venta', {
+                const response = await fetch('http://18.218.130.165:3000/api/venta', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -237,15 +237,15 @@
         var table = new DataTable('#tableVenta');
         async function fetchVentas() {
             // Obtener ventas
-            const responseVentas = await fetch('http://18.117.224.229:3000/api/venta');
+            const responseVentas = await fetch('http://18.218.130.165:3000/api/venta');
             const ventas = await responseVentas.json();
 
             // Obtener clientes
-            const responseClientes = await fetch('http://18.117.224.229:3000/api/cliente');
+            const responseClientes = await fetch('http://18.218.130.165:3000/api/cliente');
             const clientes = await responseClientes.json();
 
             // Obtener productos
-            const responseProductos = await fetch('http://18.117.224.229:3000/api/producto');
+            const responseProductos = await fetch('http://18.218.130.165:3000/api/producto');
             const productos = await responseProductos.json();
 
             // Crear mapas para búsqueda rápida de nombres por ID
