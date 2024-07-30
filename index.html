@@ -51,11 +51,17 @@
                         <label for=""><b>NOMBRE:</b></label>
                         <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese el nombre del cliente" required>
                         <br>
+                        <label for=""><b>APELLIDO:</b></label>
+                        <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ingrese el apellido del cliente" required>
+                        <br>
                         <label for=""><b>EMAIL:</b></label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="example@ejemplo.com" required>
                         <br>
                         <label for=""><b>EDAD:</b></label>
                         <input name="edad" id="edad" class="form-control" placeholder="Ingrese la edad del cliente" required>
+                        <br>
+                        <label for=""><b>DIRECCIÓN:</b></label>
+                        <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Ingrese la direccion del cliente" required>
                         <br>
                         <div class="text-center"> 
                             <button type="submit" class="btn btn-primary">Guardar</button>
@@ -79,8 +85,10 @@
                         <tr>
                             <th class="text-center">ID</th>
                             <th class="text-center">NOMBRE</th>
+                            <th class="text-center">APELLIDO</th>
                             <th class="text-center">EMAIL</th>
                             <th class="text-center">EDAD</th>
+                            <th class="text-center">DIRECCIÓN</th>
                             <!-- <th class="text-center">ACCIONES</th> -->
                         </tr>
                     </thead>
@@ -123,8 +131,10 @@
         document.getElementById('frm_nuevo_cliente').addEventListener('submit', async function (event) {
             event.preventDefault();
             const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
             const email = document.getElementById('email').value;
             const edad = parseInt(document.getElementById('edad').value, 10);
+            const direccion = document.getElementById('direccion').value;
             try {
                 const response = await fetch('http://ec2-18-218-130-165.us-east-2.compute.amazonaws.com:3000/api/cliente', {
                     method: 'POST',
@@ -169,8 +179,10 @@
                 tr.innerHTML = `
                 <td class="text-center">${cliente.id}</td>
                 <td class="text-center">${cliente.nombre}</td>
+                <td class="text-center">${cliente.apellido}</td>
                 <td class="text-center">${cliente.email}</td>
                 <td class="text-center">${cliente.edad}</td>
+                <td class="text-center">${cliente.direccion}</td>
             `;
                 tbody.appendChild(tr);
             });
