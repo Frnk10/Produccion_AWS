@@ -126,7 +126,7 @@
             const email = document.getElementById('email').value;
             const edad = parseInt(document.getElementById('edad').value, 10);
             try {
-                const response = await fetch('http://18.218.130.165:3000/api/cliente', {
+                const response = await fetch('https://frnk10.github.io/Produccion_AWS/clientes.json', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
