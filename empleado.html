@@ -51,8 +51,14 @@
                         <label for=""><b>NOMBRE:</b></label>
                         <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese el nombre del empleado" required>
                         <br>
+                        <label for=""><b>APELLIDO:</b></label>
+                        <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ingrese el apellido del empleado" required>
+                        <br>
                         <label for=""><b>EMAIL:</b></label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="example@ejemplo.com" required>
+                        <br>
+                        <label for=""><b>TELÉFONO:</b></label>
+                        <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Ingrese el número telefónico" required>
                         <br>
                         <label for=""><b>DIRECCIÓN:</b></label>
                         <textarea name="direccion" id="direccion" class="form-control" placeholder="Ingrese la dirección" required></textarea>
@@ -79,7 +85,9 @@
                         <tr>
                             <th class="text-center">ID</th>
                             <th class="text-center">NOMBRE</th>
+                            <th class="text-center">APELLIDO</th>
                             <th class="text-center">EMAIL</th>
+                            <th class="text-center">TELÉFONO</th>
                             <th class="text-center">DIRECCIÓN</th>
                             <!-- <th class="text-center">ACCIONES</th> -->
                         </tr>
@@ -123,7 +131,9 @@
         document.getElementById('frm_nuevo_empleado').addEventListener('submit', async function (event) {
             event.preventDefault();
             const nombre_emp = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
             const email_emp = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
             const direccion = document.getElementById('direccion').value;
 
             try {
@@ -170,7 +180,9 @@
                 tr.innerHTML = `
                 <td class="text-center">${empleado.id_emp}</td>
                 <td class="text-center">${empleado.nombre_emp}</td>
+                <td class="text-center">${empleado.apellido}</td>
                 <td class="text-center">${empleado.email_emp}</td>
+                <td class="text-center">${empleado.telefono}</td>
                 <td class="text-center">${empleado.direccion}</td>
             `;
                 tbody.appendChild(tr);
